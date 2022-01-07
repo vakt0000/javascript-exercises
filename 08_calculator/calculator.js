@@ -7,19 +7,11 @@ const subtract = function(a, b) {
 };
 
 const sum = function(array) {
-  let sum = 0;
-  for(let i = 0; i < array.length; i++) {
-    sum += array[i];
-  }
-  return sum;
+  return array.length ? array.reduce((total, num) => total + num) : 0;
 };
 
 const multiply = function(array) {
-  let total = 1;
-  for(let i = 0; i < array.length; i++) {
-    total *= array[i];
-  }
-  return total;
+  return array.reduce((total, num) => total * num);
 };
 
 const power = function(base, exponent) {
@@ -27,12 +19,11 @@ const power = function(base, exponent) {
 };
 
 const factorial = function(n) {
-  if(n===0 || n===1) return 1;
-  let total = n;
-  do {
-    n--;
+  total = 1;
+  while(n > 1) {
     total *= n;
-  } while(n > 1)
+    n--;
+  }
   return total;
 };
 
